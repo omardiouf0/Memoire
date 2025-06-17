@@ -1,0 +1,93 @@
+
+ <!-- ou 'layouts.app' selon ton layout principal -->
+<x-app-layout>
+        
+        <div class="min-h-screen bg-gray-100 py-8">
+              <!-- Bandeau bleu avec le nom du site -->
+            <div class="w-full py-4 text-white text-center text-2xl font-semibold shadow " style="background-color:#1D4598">
+                cfptdocs
+            </div> 
+           
+            <!-- Formulaire d'upload -->
+
+            <div class="max-w-2xl mx-auto mt-8 bg-white p-6 rounded shadow">
+                <h2 class="text-xl font-semibold mb-4">Téléverser un fichier</h2>
+                <p class="text-sm text-gray-500">Formats acceptés : PDF, DOC, DOCX, PPT, PPTX — taille max : 10 Mo</p>
+
+                @if (session('success'))
+                    <div class="mb-4 text-green-600">{{ session('success') }}</div>
+                @endif
+
+                @if ($errors->any())
+                    <div class="mb-4 text-red-600">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>• {{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form method="POST" action="{{ route('fichiers.store') }}" enctype="multipart/form-data">
+                    @csrf
+
+                    <!-- Nom -->
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium">Nom du fichier</label>
+                        <input type="text" name="name" id="name" class="mt-1 block w-full rounded border-gray-300" value="{{ old('name') }}" required>
+                    </div>
+
+                    <!-- Type -->
+                    <div class="mb-4">
+                        <label for="type" class="block text-sm font-medium">Type</label>
+                        <select name="type" id="type" class="mt-1 block w-full rounded border-gray-300" required>
+                            <option value="">-- Sélectionnez --</option>
+                            <option value="TD" {{ old('type') == 'TD' ? 'selected' : '' }}>TD</option>
+                            <option value="TP" {{ old('type') == 'TP' ? 'selected' : '' }}>TP</option>
+                            <option value="Concours" {{ old('type') == 'Concours' ? 'selected' : '' }}>Concours</option>
+                        </select>
+                    </div>
+
+                    <!-- Niveau -->
+                    <div class="mb-4">
+                        <label for="niveau" class="block text-sm font-medium">Niveau</label>
+                        <select name="niveau" id="niveau" class="mt-1 block w-full rounded border-gray-300" required>
+                            <option value="">-- Sélectionnez --</option>
+                            <option value="BTS1" {{ old('niveau') == 'BTS1' ? 'selected' : '' }}>BTS1</option>
+                            <option value="BTS2" {{ old('niveau') == 'BTS2' ? 'selected' : '' }}>BTS2</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-4">
+                        <x-label for="matiere_id" value="Matiere" />
+                        <select id="matiere_id" name="matiere_id" class="mt-1 block w-full rounded border-gray-300">
+                            <option value="">--- Séléctionnez la matière ---</option>
+                            @foreach ($filieres as $filiere)
+                                <optgroup label="{{ $filiere->name }}">
+                                    @foreach ($filiere->matieres as $matiere)
+                                        <option value="{{ $matiere->id }}" {{ old('matiere_id') == $matiere->id ? 'selected' : '' }}>
+                                            {{ $matiere->name }}
+                                        </option>
+                                    @endforeach
+                                </optgroup>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <!-- Fichier -->
+                    <div class="mb-4">
+                        <label for="fichier" class="block text-sm font-medium">Fichier</label>
+                        <input type="file" name="fichier" id="fichier" accept=".pdf,.doc,.docx,.ppt,.pptx"class="mt-1 block w-full" required>
+
+
+                    </div>
+
+                    <!-- Bouton -->
+                    <div class="flex justify-end">
+                        <button type="submit" class="px-4 py-2  text-white rounded hover:bg-blue-700"style="background-color:#1D4598">Téléverser</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+       
+</x-app-layout>
