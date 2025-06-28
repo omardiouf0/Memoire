@@ -30,6 +30,12 @@ class AdminPanelProvider extends PanelProvider
         ->colors([
             'primary' => Color::Amber,
         ])
+        ->brandName('CfptDocs') // nom visible dans le navigateur (onglet)
+        ->renderHook(
+            'branding.logo',
+            fn () => '<img src="' . asset('images/CfptDocs2.jpg') . '" class="h-10" alt="Logo">'
+        )
+        ->favicon(asset('images/CfptDocs2.jpg'))
         ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
         ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
         ->pages([
