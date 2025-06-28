@@ -28,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
         ->path('admin')
         ->login()
         ->colors([
-            'primary' => Color::Amber,
+            'primary' => Color::hex('#0369a1'),
         ])
         ->brandName('CfptDocs') // nom visible dans le navigateur (onglet)
         ->renderHook(
