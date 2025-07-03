@@ -7,7 +7,10 @@ use App\Http\Controllers\ProfesseurController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 
 Route::middleware([
     'auth:sanctum',
