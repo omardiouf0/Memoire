@@ -21,7 +21,7 @@
       <!-- Menu desktop -->
       <nav class="hidden md:flex space-x-6 text-white font-medium">
         <a href="{{ route('welcome') }}" class="hover:underline">Accueil</a>
-        <a href="{{ route('concours') }}" class="hover:underline">Concours</a>
+        <a href="{{ route('about') }}" class="hover:underline">A propos</a>
         <a href="{{ route('register') }}" class="hover:underline">S'inscrire</a>
         <a href="{{ route('login') }}" class="hover:underline">Connexion</a>
       </nav>
@@ -39,7 +39,7 @@
     <!-- Mobile menu -->
     <nav id="mobile-menu" class="md:hidden hidden px-4 pb-4 text-white space-y-2">
       <a href="{{ route('welcome') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">Accueil</a>
-      <a href="{{ route('concours') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">Concours</a>
+      <a href="{{ route('about') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">A propos</a>
       <a href="{{ route('register') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">S'inscrire</a>
       <a href="{{ route('login') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">Connexion</a>
     </nav>
@@ -50,11 +50,11 @@
     <div class="max-w-5xl mx-auto text-center">
       <h1
         class="text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-br from-[#00037a] to-[#2424f2] bg-clip-text text-transparent hover:bg-gradient-to-bl focus:outline-none focus:ring-4 dark:focus:ring-blue-800 mb-6">
-        A propos du CfptDocs
+        Epreuves de Concours
       </h1>
 
       <p class="text-base md:text-lg text-gray-500 dark:text-gray-400 leading-relaxed">
-        CfptDocs, une plateforme qui répond de vos besoins aux sources pédagogiques.
+        CfptDocs vous offre des épreuves de concours.
       </p>
 
       <div
@@ -68,71 +68,7 @@
   </section>
 
   <!-- Section cartes -->
-  <section class="bg-[#e8e8ec] w-full pt-12 px-4">
-    <div class="max-w-7xl mx-auto ">
-        <div class="max-w-xl w-full  mb-6 h-auto bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-md 
-            flex flex-col justify-center items-center 
-             hover:items-center active:items-center hover:mx-auto duration-500 overflow-hidden cursor-pointer text-left hover:text-center hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-br from-[#00037a] to-[#2424f2] bg-clip-text text-transparent hover:bg-gradient-to-bl focus:outline-none focus:ring-4 dark:focus:ring-blue-800 mb-2">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-br from-[#00037a] to-[#2424f2] bg-clip-text text-transparent hover:bg-gradient-to-bl focus:outline-none focus:ring-4 dark:focus:ring-blue-800 mb-2">
-            Présentation de la plateforme
-          </h2>
-
-          <div class="overflow-hidden relative">
-            <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed hover:text-black">
-              CfptDocs est une plateforme de stockage et de partage de documents pédagogiques, à destination des
-              étudiants et professeurs du CFPT Sénégal-Japon. Cette plateforme vise à faciliter l’accès aux différents
-              types de documents (travaux dirigés et pratiques, épreuves de concours) et à améliorer la gestion des
-              documents pédagogiques. Elle doit permettre à chaque professeur de consulter, déposer et organiser
-              facilement les documents relatifs aux enseignements (TD, TP), et aussi mettre à disposition du public des
-              sujets de concours accessibles sans inscription.
-            </p>
-          </div>
-        </div>
-        
-        <div class="max-w-xl w-full mx-auto  mb-6 h-auto bg-white p-4 sm:p-6 rounded-lg shadow-md flex flex-col justify-center items-start hover:items-center active:items-center hover: duration-500 overflow-hidden cursor-pointer text-left hover:text-center hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-br from-[#00037a] to-[#2424f2] bg-clip-text text-transparent hover:bg-gradient-to-bl focus:outline-none focus:ring-4 dark:focus:ring-blue-800 mb-2">
-            Fonctionnalité principale
-          </h2>
-
-          <div class="overflow-hidden relative">
-            <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed hover:text-black">
-              Pour avoir accès aux resources, chaque utilisateur doit créer un compte à travers la page d'inscription 
-              puis se connecter au niveau de la page de connexion en mettant son email et son mot de passe. <br>
-              Le professeur, après s'être connecter, il sera redirigé vers son tableau de bord. A travers ce dernier,
-              il a la possibilité de téléverser des fichiers, suprimer et mettre à jour ces fichiers. <br>
-              L'étudiant est redirigé vers son tableau de bord. A travers cette page, il peut consulter puis 
-              télécharger les fichiers qui le concerne.
-            </p>
-          </div>
-        </div>
-        
-        <div class="max-w-xl w-full  mb-6 h-auto bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-md 
-            flex flex-col justify-center items-center 
-             hover:items-center active:items-center hover:mx-auto duration-500 overflow-hidden cursor-pointer text-left hover:text-center hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl h-full font-black bg-gradient-to-br from-[#00037a] to-[#2424f2] bg-clip-text text-transparent hover:bg-gradient-to-bl focus:outline-none focus:ring-4 dark:focus:ring-blue-800 mb-2">
-            Ojectifs du CfptDocs
-          </h2>
-
-          <div class="overflow-hidden relative">
-            <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed hover:text-black">
-              ➤ 1. Donner un accès rapide aux supports pédagogiques <br>
-                Permettre aux étudiants de consulter et de télécharger facilement les cours et exercices mis en ligne par les enseignants. <br>
-              ➤ 2. Fournir un espace de dépôt et de gestion de fichiers <br>
-                Offrir aux enseignants la possibilité de télèverser, modifier et organiser leurs documents en ligne via une interface claire. <br>
-              ➤ 3. Rendre accessibles les concours <br>
-              Permettre à des utilisateurs anonymes (sans compte) de consulter les sujets de concours d’entrée pour s’y préparer à distance.
-            </p>
-          </div>
-        </div>
-
-
-       
-
-        <!-- Carte 3 -->
-        
-    </div>
-  </section>
+  
 
   <!-- Footer -->
   <footer

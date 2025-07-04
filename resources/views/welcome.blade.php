@@ -17,7 +17,7 @@
 
       <div class="hidden md:flex space-x-6 text-white font-medium">
         <a href="{{ route('about') }}" class="hover:underline">A propos</a>
-        <a href="#" class="hover:underline">Concours</a>
+        <a href="{{ route('concours') }}" class="hover:underline">Concours</a>
         <a href="{{ route('register') }}" class="hover:underline">S'inscrire</a>
         <a href="{{ route('login') }}" class="hover:underline">Connexion</a>
       </div>
@@ -36,7 +36,7 @@
     <!-- Mobile menu -->
     <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 text-white space-y-2">
       <a href="{{ route('about') }}" class="block">A propos</a>
-      <a href="#" class="block">Concours</a>
+      <a href="{{ route('concours') }}" class="block">Concours</a>
       <a href="{{ route('register') }}" class="block">S'inscrire</a>
       <a href="{{ route('login') }}" class="block">Connexion</a>
     </div>

@@ -11,6 +11,9 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+Route::get('/concours', function () {
+    return view('concours');
+})->name('concours');
 
 Route::middleware([
     'auth:sanctum',
