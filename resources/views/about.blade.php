@@ -71,8 +71,9 @@
   <section class="bg-[#e8e8ec] w-full pt-12 px-4">
     <div class="max-w-7xl mx-auto ">
         <div class="max-w-xl w-full  mb-6 h-auto bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-md 
-            flex flex-col justify-center items-center text-center 
-            hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 duration-300 transition-all cursor-pointer">
+            flex flex-col justify-center items-center 
+             hover:items-center active:items-center hover:mx-auto duration-500 overflow-hidden cursor-pointer text-left hover:text-center hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-br from-[#00037a] to-[#2424f2] bg-clip-text text-transparent hover:bg-gradient-to-bl focus:outline-none focus:ring-4 dark:focus:ring-blue-800 mb-2">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-br from-[#00037a] to-[#2424f2] bg-clip-text text-transparent hover:bg-gradient-to-bl focus:outline-none focus:ring-4 dark:focus:ring-blue-800 mb-2">
             Présentation de la plateforme
           </h2>
@@ -89,36 +90,38 @@
           </div>
         </div>
         
-        <div class="max-w-xl mx-auto mb-5 h-[400px] w-full bg-white p-4 rounded-lg shadow-md flex flex-col justify-center items-start hover:items-center active:items-center hover: duration-500 overflow-hidden cursor-pointer text-left hover:text-center hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400">
+        <div class="max-w-xl w-full mx-auto  mb-6 h-auto bg-white p-4 sm:p-6 rounded-lg shadow-md flex flex-col justify-center items-start hover:items-center active:items-center hover: duration-500 overflow-hidden cursor-pointer text-left hover:text-center hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-br from-[#00037a] to-[#2424f2] bg-clip-text text-transparent hover:bg-gradient-to-bl focus:outline-none focus:ring-4 dark:focus:ring-blue-800 mb-2">
-            Présentation de la plateforme
+            Fonctionnalité principale
           </h2>
 
           <div class="overflow-hidden relative">
             <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed hover:text-black">
-              CfptDocs est une plateforme de stockage et de partage de documents pédagogiques, à destination des
-              étudiants et professeurs du CFPT Sénégal-Japon. Cette plateforme vise à faciliter l’accès aux différents
-              types de documents (travaux dirigés et pratiques, épreuves de concours) et à améliorer la gestion des
-              documents pédagogiques. Elle doit permettre à chaque professeur de consulter, déposer et organiser
-              facilement les documents relatifs aux enseignements (TD, TP), et aussi mettre à disposition du public des
-              sujets de concours accessibles sans inscription.
+              Pour avoir accès aux resources, chaque utilisateur doit créer un compte à travers la page d'inscription 
+              puis se connecter au niveau de la page de connexion en mettant son email et son mot de passe. <br>
+              Le professeur, après s'être connecter, il sera redirigé vers son tableau de bord. A travers ce dernier,
+              il a la possibilité de téléverser des fichiers, suprimer et mettre à jour ces fichiers. <br>
+              L'étudiant est redirigé vers son tableau de bord. A travers cette page, il peut consulter puis 
+              télécharger les fichiers qui le concerne.
             </p>
           </div>
         </div>
         
-        <div class="max-w-xl mb-5 h-[400px] w-full bg-white p-4 rounded-lg shadow-md flex flex-col justify-center items-start hover:items-center active:items-center hover:mx-auto duration-500 overflow-hidden cursor-pointer text-left hover:text-center hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-br from-[#00037a] to-[#2424f2] bg-clip-text text-transparent hover:bg-gradient-to-bl focus:outline-none focus:ring-4 dark:focus:ring-blue-800 mb-2">
-            Présentation de la plateforme
+        <div class="max-w-xl w-full  mb-6 h-auto bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-md 
+            flex flex-col justify-center items-center 
+             hover:items-center active:items-center hover:mx-auto duration-500 overflow-hidden cursor-pointer text-left hover:text-center hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl h-full font-black bg-gradient-to-br from-[#00037a] to-[#2424f2] bg-clip-text text-transparent hover:bg-gradient-to-bl focus:outline-none focus:ring-4 dark:focus:ring-blue-800 mb-2">
+            Ojectifs du CfptDocs
           </h2>
 
           <div class="overflow-hidden relative">
             <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed hover:text-black">
-              CfptDocs est une plateforme de stockage et de partage de documents pédagogiques, à destination des
-              étudiants et professeurs du CFPT Sénégal-Japon. Cette plateforme vise à faciliter l’accès aux différents
-              types de documents (travaux dirigés et pratiques, épreuves de concours) et à améliorer la gestion des
-              documents pédagogiques. Elle doit permettre à chaque professeur de consulter, déposer et organiser
-              facilement les documents relatifs aux enseignements (TD, TP), et aussi mettre à disposition du public des
-              sujets de concours accessibles sans inscription.
+              ➤ 1. Donner un accès rapide aux supports pédagogiques <br>
+                Permettre aux étudiants de consulter et de télécharger facilement les cours et exercices mis en ligne par les enseignants. <br>
+              ➤ 2. Fournir un espace de dépôt et de gestion de fichiers <br>
+                Offrir aux enseignants la possibilité de télèverser, modifier et organiser leurs documents en ligne via une interface claire. <br>
+              ➤ 3. Rendre accessibles les concours <br>
+              Permettre à des utilisateurs anonymes (sans compte) de consulter les sujets de concours d’entrée pour s’y préparer à distance.
             </p>
           </div>
         </div>
