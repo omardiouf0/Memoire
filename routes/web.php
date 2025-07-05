@@ -53,4 +53,5 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
-// ,'role:professeur'
+Route::get('/concours', [FichierController::class, 'ConcoursFiles'])->name('concours');
+

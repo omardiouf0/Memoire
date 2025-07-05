@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="{{ asset('images/CfptDocs.jpg') }}">
   <title>CfptDocs</title>
 </head>
 
@@ -66,7 +67,46 @@
       </div>
     </div>
   </section>
-
+  <section>
+      <div class="min-h-screen bg-gray-100 py-8">   
+          <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+              <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                          <tr class="text-left bg-gray-200">
+                              <th class="px-11 py-2">Nom</th>
+                              <th class="px-11 py-2">Type</th>
+                              <th class="px-11 py-2">Niveau</th>
+                              <th class="px-11 py-2">Matière</th>
+                              <th class="px-11 py-2">Télécharger</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          @forelse ($fichiers as $fichier)
+                              <tr class="text-left border-b">
+                                  <td class=" py-4 text-center">{{ $fichier->name }}</td>
+                                  <td class=" py-4 text-center">{{ $fichier->type }}</td>
+                                  <td class=" py-4 text-center">{{ $fichier->niveau }}</td>
+                                  <td class=" py-4 text-center">{{ $fichier->matiere->name ?? 'N/A' }}</td>
+                                  <td class=" py-4 text-center">
+                                      <a href="{{ asset('storage/' . $fichier->chemin) }}" target="_blank"
+                                          class="px-4 py-2 text-white rounded hover:bg-green-700" 
+                                          style="background-color:#16a34a">
+                                          Télécharger
+                                      </a>
+                                  </td>
+                              </tr>
+                          @empty
+                              <tr class="px-6 py-4 text-center">
+                                  <td colspan="4">Aucun fichier n'est disponible pour vous.</td>
+                              </tr>
+                          @endforelse
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </section>
   <!-- Section cartes -->
   
 
@@ -78,7 +118,7 @@
       <!-- Logo + description -->
       <div>
         <div class="flex items-center mb-3">
-          <a href="https://www.linkedin.com/school/cfpt/?originalSubdomain=fr" target="_blank" rel="noopener">
+          <a href="http://cfptsj.sn" target="_blank" rel="noopener">
             <img src="{{ asset('images/Logocfpt.png') }}" alt="Logo CFPT Sénégal-Japon"
               class="w-12 h-12 rounded mr-3" />
           </a>

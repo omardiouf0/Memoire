@@ -154,36 +154,47 @@ class FichierController extends Controller
     }
 
         public function etudiantFiles()
-{
-    $etudiant = auth()->user();
+    {
+        $etudiant = auth()->user();
 
-    if ($etudiant->role !== 'etudiant') {
-        abort(403, 'Accès interdit');
+        if ($etudiant->role !== 'etudiant') {
+            abort(403, 'Accès interdit');
+        }
+
+        // Récupérer la filière et le département de l'étudiant
+        $filiere = $etudiant->filiere;
+        $departement = $filiere?->departement;
+
+        if (!$filiere || !$departement) {
+            return redirect()->back()->with('error', 'Aucune filière ou département associé à cet étudiant.');
+        }
+
+        // Récupérer les matières liées à la filière
+        $matiereIds = \DB::table('contenir')
+            ->where('filiere_id', $filiere->id)
+            ->pluck('matiere_id');
+
+        // Récupérer les fichiers qui correspondent au niveau et matières
+        $fichiers = Fichier::where('niveau', $etudiant->niveau)
+            ->whereIn('matiere_id', $matiereIds)
+            ->with('matiere')
+            ->latest()
+            ->get();
+
+        return view('dashboards.etudiant', compact('fichiers'));
     }
+    
 
-    // Récupérer la filière et le département de l'étudiant
-    $filiere = $etudiant->filiere;
-    $departement = $filiere?->departement;
+    public function ConcoursFiles()
+    {
+        // Récupérer tous les fichiers de type "concours" avec la relation "matiere"
+        $fichiers = Fichier::where('type', 'concours')
+            ->with('matiere')
+            ->latest()
+            ->get();
 
-    if (!$filiere || !$departement) {
-        return redirect()->back()->with('error', 'Aucune filière ou département associé à cet étudiant.');
+        return view('concours', compact('fichiers'));
     }
-
-    // Récupérer les matières liées à la filière
-    $matiereIds = \DB::table('contenir')
-        ->where('filiere_id', $filiere->id)
-        ->pluck('matiere_id');
-
-    // Récupérer les fichiers qui correspondent au niveau et matières
-    $fichiers = Fichier::where('niveau', $etudiant->niveau)
-        ->whereIn('matiere_id', $matiereIds)
-        ->with('matiere')
-        ->latest()
-        ->get();
-
-    return view('dashboards.etudiant', compact('fichiers'));
-}
-
 
 }
 
