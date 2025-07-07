@@ -17,6 +17,7 @@
       </div>
 
       <div class="hidden md:flex space-x-6 text-white font-medium">
+        <a href="{{ route('welcome') }}" class="hover:underline text-blue-400 ">Acceuil</a>
         <a href="{{ route('about') }}" class="hover:underline">A propos</a>
         <a href="{{ route('concours') }}" class="hover:underline">Concours</a>
         <a href="{{ route('register') }}" class="hover:underline">S'inscrire</a>
@@ -36,6 +37,7 @@
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 text-white space-y-2">
+      <a href="{{ route('welcome') }}" class="hover:underline text-blue-400 ">Acceuil</a>
       <a href="{{ route('about') }}" class="block">A propos</a>
       <a href="{{ route('concours') }}" class="block">Concours</a>
       <a href="{{ route('register') }}" class="block">S'inscrire</a>

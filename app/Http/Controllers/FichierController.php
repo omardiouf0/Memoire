@@ -57,16 +57,17 @@ class FichierController extends Controller
     {
         $user = auth()->user();
 
-        // Récupère les fichiers téléversés par le professeur connecté
         if ($user->role === 'professeur') {
-            $fichiers = $user->fichiers;
+            // On utilise la relation, mais avec pagination
+            $fichiers = $user->fichiers()->paginate(5);
         } else {
-            // Pour d'autres rôles, tu peux filtrer ou afficher selon le besoin
-            $fichiers = Fichier::all(); // Ou autre logique
+            // Tous les fichiers paginés
+            $fichiers = Fichier::paginate(5);
         }
 
-        return view('dashboards.professeur', compact('fichiers'));
+        return view('fichiers.index', compact('fichiers'));
     }
+
         public function edit($id)
     {
         $fichier = Fichier::findOrFail($id);
@@ -195,6 +196,6 @@ class FichierController extends Controller
 
         return view('concours', compact('fichiers'));
     }
-
+    
 }
 

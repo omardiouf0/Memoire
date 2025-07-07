@@ -41,6 +41,33 @@
                         @endforelse
                     </tbody>
                 </table>
+                <div class="flex justify-center mt-4 py-4">
+                    <nav aria-label="Page navigation example">
+                      <ul class="inline-flex -space-x-px text-sm">
+                        <li>
+                          <a href="#" class="px-3 h-8 flex items-center justify-center text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700">Previous</a>
+                        </li>
+                        <li>
+                          <a href="#" class="px-3 h-8 flex items-center justify-center text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">1</a>
+                        </li>
+                        <li>
+                          <a href="#" class="px-3 h-8 flex items-center justify-center text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">2</a>
+                        </li>
+                        <li>
+                          <a href="#" aria-current="page" class="px-3 h-8 flex items-center justify-center text-blue-600 bg-blue-50 border border-gray-300 hover:bg-blue-100 hover:text-blue-700">3</a>
+                        </li>
+                        <li>
+                          <a href="#" class="px-3 h-8 flex items-center justify-center text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">4</a>
+                        </li>
+                        <li>
+                          <a href="#" class="px-3 h-8 flex items-center justify-center text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">5</a>
+                        </li>
+                        <li>
+                          <a href="#" class="px-3 h-8 flex items-center justify-center text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700">Next</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
             </div>
         </div>
     </div>

@@ -22,6 +22,7 @@
       <!-- Menu desktop -->
       <nav class="hidden md:flex space-x-6 text-white font-medium">
         <a href="{{ route('welcome') }}" class="hover:underline">Accueil</a>
+        <a href="{{ route('about') }}" class="hover:underline text-blue-400 ">A propos</a>
         <a href="{{ route('concours') }}" class="hover:underline">Concours</a>
         <a href="{{ route('register') }}" class="hover:underline">S'inscrire</a>
         <a href="{{ route('login') }}" class="hover:underline">Connexion</a>
@@ -40,6 +41,7 @@
     <!-- Mobile menu -->
     <nav id="mobile-menu" class="md:hidden hidden px-4 pb-4 text-white space-y-2">
       <a href="{{ route('welcome') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">Accueil</a>
+      <a href="{{ route('about') }}" class="hover:underline text-blue-400 ">A propos</a>
       <a href="{{ route('concours') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">Concours</a>
       <a href="{{ route('register') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">S'inscrire</a>
       <a href="{{ route('login') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">Connexion</a>

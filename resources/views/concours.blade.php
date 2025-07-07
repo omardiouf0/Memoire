@@ -23,6 +23,7 @@
       <nav class="hidden md:flex space-x-6 text-white font-medium">
         <a href="{{ route('welcome') }}" class="hover:underline">Accueil</a>
         <a href="{{ route('about') }}" class="hover:underline">A propos</a>
+        <a href="{{ route('concours') }}" class="hover:underline text-blue-400 ">Concours</a>
         <a href="{{ route('register') }}" class="hover:underline">S'inscrire</a>
         <a href="{{ route('login') }}" class="hover:underline">Connexion</a>
       </nav>
@@ -41,6 +42,7 @@
     <nav id="mobile-menu" class="md:hidden hidden px-4 pb-4 text-white space-y-2">
       <a href="{{ route('welcome') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">Accueil</a>
       <a href="{{ route('about') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">A propos</a>
+      <a href="{{ route('concours') }}" class="hover:underline text-blue-400 ">Concours</a>
       <a href="{{ route('register') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">S'inscrire</a>
       <a href="{{ route('login') }}" class="block px-3 py-2 rounded hover:bg-[#1717cf]">Connexion</a>
     </nav>
@@ -72,16 +74,16 @@
           <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
               <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                   <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 w-11">
                           <tr class="text-left bg-gray-200">
-                              <th class="px-11 py-2">Nom</th>
-                              <th class="px-11 py-2">Type</th>
-                              <th class="px-11 py-2">Niveau</th>
-                              <th class="px-11 py-2">Matière</th>
-                              <th class="px-11 py-2">Télécharger</th>
+                              <th class="text-center py-4 text-[20px]">Nom</th>
+                              <th class="text-center py-4 text-[20px]">Type</th>
+                              <th class="text-center py-4 text-[20px]">Niveau</th>
+                              <th class="text-center py-4 text-[20px]">Matière</th>
+                              <th class="text-center py-4 text-[20px]">Télécharger</th>
                           </tr>
                       </thead>
-                      <tbody>
+                      <tbody> 
                           @forelse ($fichiers as $fichier)
                               <tr class="text-left border-b">
                                   <td class=" py-4 text-center">{{ $fichier->name }}</td>
@@ -96,6 +98,7 @@
                                       </a>
                                   </td>
                               </tr>
+                              
                           @empty
                               <tr class="px-6 py-4 text-center">
                                   <td colspan="4">Aucun fichier n'est disponible pour vous.</td>
@@ -103,6 +106,33 @@
                           @endforelse
                       </tbody>
                   </table>
+                  <div class="flex justify-center mt-4">
+                    <nav aria-label="Page navigation example">
+                      <ul class="inline-flex -space-x-px text-sm">
+                        <li>
+                          <a href="#" class="px-3 h-8 flex items-center justify-center text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700">Previous</a>
+                        </li>
+                        <li>
+                          <a href="#" class="px-3 h-8 flex items-center justify-center text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">1</a>
+                        </li>
+                        <li>
+                          <a href="#" class="px-3 h-8 flex items-center justify-center text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">2</a>
+                        </li>
+                        <li>
+                          <a href="#" aria-current="page" class="px-3 h-8 flex items-center justify-center text-blue-600 bg-blue-50 border border-gray-300 hover:bg-blue-100 hover:text-blue-700">3</a>
+                        </li>
+                        <li>
+                          <a href="#" class="px-3 h-8 flex items-center justify-center text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">4</a>
+                        </li>
+                        <li>
+                          <a href="#" class="px-3 h-8 flex items-center justify-center text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">5</a>
+                        </li>
+                        <li>
+                          <a href="#" class="px-3 h-8 flex items-center justify-center text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700">Next</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
               </div>
           </div>
       </div>
