@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->enum('type', ['TD', 'TP', 'Concours']);
-            $table->enum('niveau', ['BTS1', 'BTS2']);
+            $table->enum('niveau', ['BTS1', 'BTS2','BT','BTS','BTI']);
             $table->string('chemin');
             $table->foreignId('matiere_id')->nullable()->constrained('matieres')->onDelete('set null');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');

@@ -32,6 +32,7 @@ class User extends Authenticatable
         'role', 
         'matricule',
         'niveau',
+        'specialiste',
         'filiere_id',
     ];
 

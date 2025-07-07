@@ -69,6 +69,27 @@
 
             </div>  
 
+            <div id="professeur-fields" style="display: none;">
+                 <!-- specialiste -->
+                <div class="mt-4">
+                    <x-label for="specialiste" value="specialiste" />
+                    <select id="specialiste" name="specialiste" required class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <option value="specialiste">-- Sélectionnez un spécialiste --</option>
+                        <option value="anglais" {{ old('specialiste') == 'anglais' ? 'selected' : '' }}>Anglais</option>
+                        <option value="francais" {{ old('specialiste') == 'francais' ? 'selected' : '' }}>Français</option>
+                        <option value="programmation" {{ old('specialiste') == 'programmation' ? 'selected' : '' }}>Programmation</option>
+                        <option value="reseau" {{ old('specialiste') == 'reseau' ? 'selected' : '' }}>Réseau</option>
+                        <option value="electronique" {{ old('specialiste') == 'electronique' ? 'selected' : '' }}>Electronique</option>
+                        <option value="electrique" {{ old('specialiste') == 'electrique' ? 'selected' : '' }}>Electrique</option>
+                        <option value="entrepreneur" {{ old('specialiste') == 'entrepreneur' ? 'selected' : '' }}>Entrepreneuriat</option>
+                        <option value="design" {{ old('specialiste') == 'design' ? 'selected' : '' }}>Design</option>
+                    </select>
+                    @error('specialiste')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Password') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
@@ -109,26 +130,39 @@
         </form>
 
         <script>
-        const roleSelect = document.getElementById('role');
-        const etudiantFields = document.getElementById('etudiant-fields');
+            const roleSelect = document.getElementById('role');
+            const etudiantFields = document.getElementById('etudiant-fields');
+            const professeurFields = document.getElementById('professeur-fields');
 
-        roleSelect.addEventListener('change', function () {
-            const isEtudiant = this.value === 'etudiant';
+            roleSelect.addEventListener('change', function () {
+                const isEtudiant = this.value === 'etudiant';
 
-            etudiantFields.style.display = isEtudiant ? 'block' : 'none';
+                etudiantFields.style.display = isEtudiant ? 'block' : 'none';
 
-            // Désactiver tous les champs internes si ce n’est pas un étudiant
-            const inputs = etudiantFields.querySelectorAll('input, select');
-            inputs.forEach(input => {
-                input.disabled = !isEtudiant;
+                // Désactiver tous les champs internes si ce n’est pas un étudiant
+                const inputs = etudiantFields.querySelectorAll('input, select');
+                inputs.forEach(input => {
+                    input.disabled = !isEtudiant;
+                });
             });
-        });
 
-        // Déclencher une fois au chargement pour bien gérer les valeurs pré-remplies
-        window.addEventListener('DOMContentLoaded', () => {
-            roleSelect.dispatchEvent(new Event('change'));
-        });
-    </script>
+            roleSelect.addEventListener('change', function () {
+                const isProfesseur = this.value === 'professeur';
+
+                professeurFields.style.display = isProfesseur ? 'block' : 'none';
+
+                // Désactiver tous les champs internes si ce n’est pas un professeur
+                const inputs = profsseurFields.querySelectorAll('input, select');
+                inputs.forEach(input => {
+                    input.disabled = !isProfesseur;
+                });
+            });
+
+            // Déclencher une fois au chargement pour bien gérer les valeurs pré-remplies
+            window.addEventListener('DOMContentLoaded', () => {
+                roleSelect.dispatchEvent(new Event('change'));
+            });
+        </script>
 
     </x-authentication-card>
 </x-guest-layout>

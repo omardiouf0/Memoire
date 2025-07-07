@@ -42,14 +42,35 @@
                     </select>
                 </div>
 
-                <!-- Niveau -->
-                <div class="mb-4">
-                    <label for="niveau" class="block text-sm font-medium">Niveau</label>
-                    <select name="niveau" id="niveau" class="mt-1 block w-full rounded border-gray-300" required>
-                        <option value="BTS1" {{ $fichier->niveau == 'BTS1' ? 'selected' : '' }}>BTS1</option>
-                        <option value="BTS2" {{ $fichier->niveau == 'BTS2' ? 'selected' : '' }}>BTS2</option>
-                    </select>
-                </div>
+                    <!-- Niveau -->
+                     <div id="autres-fields" style="display: none;">
+                        <!-- Niveau -->
+                        <div class="mb-4">
+                            <label for="niveau_autres" class="block text-sm font-medium">Niveau</label>
+                            <select name="niveau" id="niveau_autres" class="mt-1 block w-full rounded border-gray-300" required>
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="BTS1" {{ old('niveau') == 'BTS1' ? 'selected' : '' }}>BTS1</option>
+                                <option value="BTS2" {{ old('niveau') == 'BTS2' ? 'selected' : '' }}>BTS2</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="concours-fields" style="display: none;">
+                        <!-- specialiste -->
+                        <div class="mt-4">
+                            <label for="niveau_concours" class="block text-sm font-medium">Niveau</label>
+                            <select id="niveau_concours" name="niveau" required class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="BTS" {{ old('niveau') == 'BTS' ? 'selected' : '' }}>BTS</option>
+                                <option value="BT" {{ old('niveau') == 'BT' ? 'selected' : '' }}>BT</option>
+                                <option value="BTI" {{ old('niveau') == 'BTI' ? 'selected' : '' }}>BTI</option>
+                            </select>
+                            @error('niveau')
+                                <span class="text-red-500 text-sm">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+
 
                 <div class="mb-4">
                     <x-label for="matiere_id" value="Matière" />
@@ -85,4 +106,25 @@
             </form>
         </div>
     </div>
+        <script>
+            const typeSelect = document.getElementById('type');
+            const concoursFields = document.getElementById('concours-fields');
+            const autresFields = document.getElementById('autres-fields');
+
+            const toggleFields = (element, show) => {
+                element.style.display = show ? 'block' : 'none';
+                element.querySelectorAll('input, select').forEach(el => {
+                    el.disabled = !show;
+                });
+            };
+
+            const handleTypeChange = () => {
+                const value = typeSelect.value;
+                toggleFields(concoursFields, value === 'Concours');
+                toggleFields(autresFields, value === 'TD' || value === 'TP');
+            };
+
+            typeSelect.addEventListener('change', handleTypeChange);
+            window.addEventListener('DOMContentLoaded', handleTypeChange);
+        </script>
 </x-app-layout>

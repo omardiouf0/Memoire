@@ -88,7 +88,7 @@ class FichierController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'type' => 'required|in:TD,TP,Concours',
-            'niveau' => 'required|in:BTS1,BTS2',
+            'niveau' => 'required|in:BTS1,BTS2,BTI,BT,BTS',
             'matiere_id' => 'required|exists:matieres,id',
             'fichier' => 'nullable|file|mimes:pdf,doc,docx,ppt,pptx|max:10240',
         ]);
