@@ -9,7 +9,7 @@ class Fichier extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'type', 'niveau', 'chemin', 'matiere_id', 'user_id'];
+    protected $fillable = ['name', 'type', 'niveau', 'chemin','annee', 'matiere_id', 'user_id'];
     
     public function matiere() {
     return $this->belongsTo(Matiere::class);

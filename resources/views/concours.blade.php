@@ -77,8 +77,8 @@
                       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 w-11">
                           <tr class="text-left bg-gray-200">
                               <th class="text-center py-4 text-[20px]">Nom</th>
-                              <th class="text-center py-4 text-[20px]">Type</th>
                               <th class="text-center py-4 text-[20px]">Niveau</th>
+                              <th class="text-center py-4 text-[20px]">Année</th>
                               <th class="text-center py-4 text-[20px]">Matière</th>
                               <th class="text-center py-4 text-[20px]">Télécharger</th>
                           </tr>
@@ -87,8 +87,8 @@
                           @forelse ($fichiers as $fichier)
                               <tr class="text-left border-b">
                                   <td class=" py-4 text-center">{{ $fichier->name }}</td>
-                                  <td class=" py-4 text-center">{{ $fichier->type }}</td>
                                   <td class=" py-4 text-center">{{ $fichier->niveau }}</td>
+                                  <td class=" py-4 text-center">{{ $fichier->annee }}</td>
                                   <td class=" py-4 text-center">{{ $fichier->matiere->name ?? 'N/A' }}</td>
                                   <td class=" py-4 text-center">
                                       <a href="{{ asset('storage/' . $fichier->chemin) }}" target="_blank"

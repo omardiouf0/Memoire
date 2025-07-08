@@ -25,7 +25,8 @@ class FichierController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'type' => 'required|in:TD,TP,Concours',
-            'niveau' => 'required|in:BTS1,BTS2',
+            'niveau' => 'required|in:BTS1,BTS2,BTS,BT,BTI',
+            'annee' => 'required|string|max:255',
             'matiere_id' => 'required|exists:matieres,id',
             'fichier' => 'required|file|mimes:pdf,doc,docx,ppt,pptx|max:10240', // max 10 Mo
         ]);
@@ -38,6 +39,7 @@ class FichierController extends Controller
             'name' => $validated['name'],
             'type' => $validated['type'],
             'niveau' => $validated['niveau'],
+            'annee' => $validated['annee'],
             'chemin' => $chemin,
             'user_id' => auth()->id(),
             'matiere_id' => $validated['matiere_id'],

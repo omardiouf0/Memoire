@@ -44,6 +44,7 @@ class CreateNewUser implements CreatesNewUsers
             'role' => $input['role'],
             'matricule' => $input['role'] === 'etudiant' ? $input['matricule'] : null,
             'niveau' => $input['role'] === 'etudiant' ? $input['niveau'] : null,
+           'specialiste' => $input['role'] === 'professeur' ? $input['specialiste'] : null,
             'filiere_id' => $input['role'] === 'etudiant' && isset($input['filiere_id']) ? $input['filiere_id'] : null,
    
         ]);

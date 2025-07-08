@@ -59,7 +59,7 @@
                         <!-- specialiste -->
                         <div class="mt-4">
                             <label for="niveau_concours" class="block text-sm font-medium">Niveau</label>
-                            <select id="niveau_concours" name="niveau" required class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                            <select name="niveau" id="niveau_concours"  required class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                 <option value="">-- Sélectionnez --</option>
                                 <option value="BTS" {{ old('niveau') == 'BTS' ? 'selected' : '' }}>BTS</option>
                                 <option value="BT" {{ old('niveau') == 'BT' ? 'selected' : '' }}>BT</option>
@@ -89,7 +89,10 @@
                     </select>
                 </div>
 
-                 
+                  <div class="mb-4">
+                        <label for="annee" class="block text-sm font-medium">Année</label>
+                        <input type="text" name="annee" placeholder="2023-2024"id="annee" class="mt-1 block w-full rounded border-gray-300" value="{{ old('name') }}" required>
+                  </div>
 
                 <!-- Fichier -->
                 <div class="mb-4">

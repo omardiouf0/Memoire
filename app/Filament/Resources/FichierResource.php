@@ -37,8 +37,12 @@ class FichierResource extends Resource
                 ->options([
                     'BTS1'=>'BTS1',
                     'BTS2'=>'BTS2',
+                    'BTS'=>'BTS',
+                    'BT'=>'BT',
+                    'BTI'=>'BTI',
                 ])
                 ->required(),
+            TextInput::make('annee')->required()->label('Année'),
             FileUpload::make('chemin')
                 ->label('Fichier')
                 ->acceptedFileTypes(['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.presentationml.presentation'])
@@ -58,6 +62,7 @@ class FichierResource extends Resource
                 TextColumn::make('name')->label('Nom')->searchable(),
                 TextColumn::make('type')->label('Type'),
                 TextColumn::make('niveau'),
+                TextColumn::make('annee'),
                 TextColumn::make('matiere.name')->label('Matière'),
             ])
             ->filters([
