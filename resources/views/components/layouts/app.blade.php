@@ -8,9 +8,12 @@
     <title>{{ config('app.name', 'CfptDocs') }}</title>
 
     <!-- Favicon optimisé -->
-    <link rel="icon" href="{{ asset('images/CfptDocs2.jpg') }}" type="image/jpeg">
-    <link rel="shortcut icon" href="{{ asset('images/CfptDocs2.jpg') }}" type="image/jpeg">
-    
+    <link rel="icon" href="{{ asset('images/CfptDocs2.jpg') }}" sizes="32x32" type="image/jpeg">
+    <link rel="icon" href="{{ asset('images/CfptDocs2.jpg') }}" sizes="192x192" type="image/jpeg">
+    <link rel="apple-touch-icon" href="{{ asset('images/CfptDocs2.jpg') }}">
+
+
+
     <!-- Préchargement des assets -->
     <link rel="preload" href="{{ asset('images/CfptDocs2.jpg') }}" as="image">
     
