@@ -26,7 +26,7 @@ class CreateNewUser implements CreatesNewUsers
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'role' => ['required', 'in:etudiant,professeur'],
-            'specialiste'=>['required','in:francais,anglais,electronique,reseau,programmation,entrepreneur,design,electrique'],
+            'specialiste'=>['required_if:role,professeur|in:francais,anglais,electronique,reseau,programmation,entrepreneur,design,electrique'],
             'matricule' => ['nullable', 'string', 'unique:users,matricule', 'regex:/^M\d{7}$/'],
             'niveau' => ['required_if:role,etudiant', 'in:BTS1,BTS2'],
             'filiere_id' => ['nullable', 'exists:filieres,id'],
