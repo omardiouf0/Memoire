@@ -38,7 +38,12 @@ class FiliereResource extends Resource
                 ->searchable()
                 ->preload()
                 ->required(),
+            Select::make('departement_id')
+                ->label('Département')
+                ->relationship('departement', 'name')
+                ->required(),
             ]);
+            
     }
 
     public static function table(Table $table): Table

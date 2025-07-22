@@ -47,7 +47,7 @@ class DepartementResource extends Resource
             ->columns([
                 TextColumn::make('name')->label('Nom'),
                 TextColumn::make('code')->label('Code'),
-                TextColumn::make('filiere.name')->label('Filière'),
+                // TextColumn::make('filiere.name')->label('Filière'),
             ])
             ->filters([
                 //

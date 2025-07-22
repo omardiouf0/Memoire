@@ -41,6 +41,7 @@ class UserResource extends Resource
                 ->required(),
             TextInput::make('matricule')->nullable()->label('Matricule'),
             TextInput::make('niveau')->nullable()->label('Niveau'),
+            TextInput::make('specialiste')->nullable()->label('Specialité'),
         ]);
     }
 
@@ -59,6 +60,8 @@ class UserResource extends Resource
                 TextColumn::make('role')->label('Rôle'),
                 TextColumn::make('matricule'),
                 TextColumn::make('niveau'),
+                TextColumn::make('specialiste'),
+
             ])
            ->filters([
             SelectFilter::make('role')
