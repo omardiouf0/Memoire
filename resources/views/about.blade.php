@@ -62,7 +62,7 @@
 
       <div
         class="flex flex-col sm:flex-row justify-center items-center mt-10 space-y-4 sm:space-y-0 sm:space-x-4">
-        <a href="#"
+        <a href="#section2"
           class="text-[#00037a] border border-[#00037a] px-6 py-3 rounded-md text-base font-semibold hover:bg-[#1717cf] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#00037a] transition duration-200 ease-in-out">
           En savoir plus
         </a>
@@ -93,7 +93,7 @@
           </div>
         </div>
         
-        <div class="max-w-xl w-full mx-auto  mb-6 h-auto bg-white p-4 sm:p-6 rounded-lg shadow-md flex flex-col justify-center items-start hover:items-center active:items-center hover: duration-500 overflow-hidden cursor-pointer text-left hover:text-center hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400">
+        <div id="section2" class="max-w-xl w-full mx-auto  mb-6 h-auto bg-white p-4 sm:p-6 rounded-lg shadow-md flex flex-col justify-center items-start hover:items-center active:items-center hover: duration-500 overflow-hidden cursor-pointer text-left hover:text-center hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-br from-[#00037a] to-[#2424f2] bg-clip-text text-transparent hover:bg-gradient-to-bl focus:outline-none focus:ring-4 dark:focus:ring-blue-800 mb-2">
             Fonctionnalité principale
           </h2>

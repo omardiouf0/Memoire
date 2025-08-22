@@ -61,11 +61,11 @@
         </p>
 
         <div class="flex flex-col sm:flex-row justify-center items-center mt-10 space-y-4 sm:space-y-0 sm:space-x-4">
-          <a href="#" class="bg-gradient-to-br from-[#00037a] to-[#1c1cdd] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none  dark:focus:ring-blue-800
+          <a href="{{ route('login') }}" class="bg-gradient-to-br from-[#00037a] to-[#1c1cdd] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none  dark:focus:ring-blue-800
             text-white px-6 py-3 rounded-md text-base font-semibold hover:bg-blue-900 transition">
             Commencez maintenant
           </a>
-          <a href="#"class="text-[#00037a] border border-[#00037a] px-6 py-3 rounded-md text-base font-semibold
+          <a href="#section1"class="text-[#00037a] border border-[#00037a] px-6 py-3 rounded-md text-base font-semibold
             hover:bg-[#1717cf] hover:text-white
             focus:outline-none focus:ring-2 focus:ring-[#00037a] transition duration-200 ease-in-out">
               En savoir plus
@@ -73,7 +73,7 @@
         </div>
       </div>
   </section>
-  <section class="bg-[#e8e8ec] w-full pt-12">
+  <section id="section1" class="bg-[#e8e8ec] w-full pt-12">
       <!-- Titre -->
       <p class="text-2xl md:text-3xl lg:text-4xl font-black text-center 
         bg-gradient-to-br from-[#00037a] to-[#2424f2] 
