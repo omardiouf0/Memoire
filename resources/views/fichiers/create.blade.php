@@ -44,6 +44,7 @@
                             <option value="">-- Sélectionnez --</option>
                             <option value="TD" {{ old('type') == 'TD' ? 'selected' : '' }}>TD</option>
                             <option value="TP" {{ old('type') == 'TP' ? 'selected' : '' }}>TP</option>
+                            <option value="Cours" {{ old('type') == 'Cours' ? 'selected' : '' }}>Cours</option>
                             <option value="Concours" {{ old('type') == 'Concours' ? 'selected' : '' }}>Concours</option>
                         </select>
                     </div>
@@ -101,8 +102,6 @@
                     <div class="mb-4">
                         <label for="fichier" class="block text-sm font-medium">Fichier</label>
                         <input type="file" name="fichier" id="fichier" accept=".pdf,.doc,.docx,.ppt,.pptx"class="mt-1 block w-full" required>
-
-
                     </div>
 
                     <!-- Bouton -->
@@ -128,7 +127,7 @@
             const handleTypeChange = () => {
                 const value = typeSelect.value;
                 toggleFields(concoursFields, value === 'Concours');
-                toggleFields(autresFields, value === 'TD' || value === 'TP');
+                toggleFields(autresFields, value === 'TD' || value === 'TP' || value === 'Cours');
             };
 
             typeSelect.addEventListener('change', handleTypeChange);

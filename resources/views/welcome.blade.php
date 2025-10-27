@@ -99,7 +99,7 @@
             </div>
             <p class="text-sm text-gray-500">Plus de 20 documents disponibles !</p>
           </div>
-          <a href="#" class="mt-6 bg-gradient-to-br from-[#00037a] to-[#1c1cdd] hover:bg-gradient-to-bl text-white py-2 rounded-md text-center font-semibold transition">
+          <a href="{{ route('login') }}" class="mt-6 bg-gradient-to-br from-[#00037a] to-[#1c1cdd] hover:bg-gradient-to-bl text-white py-2 rounded-md text-center font-semibold transition">
             Voir plus
           </a>
         </div>
@@ -117,7 +117,7 @@
             </div>
             <p class="text-sm text-gray-500">Plus de 20 documents disponibles !</p>
           </div>
-          <a href="#" class="mt-6 bg-gradient-to-br from-[#00037a] to-[#1c1cdd] hover:bg-gradient-to-bl text-white py-2 rounded-md text-center font-semibold transition">
+          <a href="{{ route('login') }}" class="mt-6 bg-gradient-to-br from-[#00037a] to-[#1c1cdd] hover:bg-gradient-to-bl text-white py-2 rounded-md text-center font-semibold transition">
             Voir plus
           </a>
         </div>
@@ -135,7 +135,7 @@
             </div>
             <p class="text-sm text-gray-500">Plus de 30 épreuves disponibles !</p>
           </div>
-          <a href="#" class="mt-6 bg-gradient-to-br from-[#00037a] to-[#1c1cdd] hover:bg-gradient-to-bl text-white py-2 rounded-md text-center font-semibold transition">
+          <a href="{{ route('concours') }}" class="mt-6 bg-gradient-to-br from-[#00037a] to-[#1c1cdd] hover:bg-gradient-to-bl text-white py-2 rounded-md text-center font-semibold transition">
             Voir plus
           </a>
         </div>
@@ -211,6 +211,7 @@
       <ul class="space-y-2 text-gray-300 mx-[60px] w-full">
         <li>Documents de TD</li>
         <li>Documents de TP</li>
+        <li>Documents de Cours</li>
         <li>Épreuves de concours</li>
       </ul>
     </div>

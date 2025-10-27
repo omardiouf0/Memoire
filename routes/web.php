@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FichierController;
 use App\Http\Controllers\ProfesseurController;
-
+use App\Http\Controllers\EtudiantController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,16 +31,16 @@ Route::middleware([
         };
     })->name('dashboard');
 
-    // Dashboards spécifiques
-    Route::get('/dashboard/etudiant', fn () => view('dashboards.etudiant'))->name('dashboard.etudiant');
-    Route::get('/dashboard/professeur', [ProfesseurController::class, 'dashboard'])->name('dashboard.professeur');
-
+  
     
 });
 Route::middleware(['auth', 'verified'])->group(function () {
       Route::get('/fichiers/create', [FichierController::class, 'create'])->name('fichiers.create');
       Route::post('/fichiers', [FichierController::class, 'store'])->name('fichiers.store');
-      Route::get('/dashboard/etudiant', [FichierController::class, 'etudiantFiles'])->name('dashboard.etudiant');
+        // Dashboards spécifiques
+      Route::get('/dashboard/etudiant', [EtudiantController::class, 'dashboard'])->name('dashboard.etudiant');
+      Route::get('/dashboard/professeur', [ProfesseurController::class, 'dashboard'])->name('dashboard.professeur');
+
 });
  
 Route::middleware(['auth'])->group(function () {

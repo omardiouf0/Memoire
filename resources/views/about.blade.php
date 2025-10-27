@@ -179,6 +179,7 @@
         <ul class="space-y-2 text-gray-300 px-6">
           <li>Documents de TD</li>
           <li>Documents de TP</li>
+          <li>Documents de Cours</li>
           <li>Épreuves de concours</li>
         </ul>
       </div>

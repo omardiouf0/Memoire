@@ -12,7 +12,7 @@ class ProfesseurController extends Controller
         $user = Auth::user();
 
       // Récupère les fichiers uploadés par ce professeur
-        $fichiers = Fichier::with('matiere')->where('user_id', $user->id)->get();
+     $fichiers = Fichier::with('matiere')->where('user_id', $user->id)->paginate(5);
 
         return view('dashboards.professeur', compact('fichiers'));
     }

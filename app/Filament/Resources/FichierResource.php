@@ -30,6 +30,7 @@ class FichierResource extends Resource
                 ->options([
                     'td' => 'TD',
                     'tp' => 'TP',
+                    'Cours'=>'Cours',
                     'concours' => 'Concours',
                 ])
                 ->required(),
@@ -71,6 +72,7 @@ class FichierResource extends Resource
                 ->options([
                     'td' => 'TD',
                     'tp' => 'TP',
+                    'Cours'=>'Cours',
                     'concours'=>'Concours',
                 ])
             ])

@@ -43,7 +43,7 @@
 
             <!-- Pagination -->
             <div class="mt-6 flex justify-center">
-                {{ $fichiers->links() }}
+                {{ $fichiers->links('pagination::tailwind') }}
             </div>
         </div>
     </div>

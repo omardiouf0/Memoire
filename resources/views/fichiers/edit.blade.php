@@ -38,6 +38,7 @@
                     <select name="type" id="type" class="mt-1 block w-full rounded border-gray-300" required>
                         <option value="TD" {{ $fichier->type == 'TD' ? 'selected' : '' }}>TD</option>
                         <option value="TP" {{ $fichier->type == 'TP' ? 'selected' : '' }}>TP</option>
+                        <option value="Cours" {{ $fichier->type == 'Cours' ? 'selected' : '' }}>Cours</option>
                         <option value="Concours" {{ $fichier->type == 'Concours' ? 'selected' : '' }}>Concours</option>
                     </select>
                 </div>
@@ -124,7 +125,7 @@
             const handleTypeChange = () => {
                 const value = typeSelect.value;
                 toggleFields(concoursFields, value === 'Concours');
-                toggleFields(autresFields, value === 'TD' || value === 'TP');
+                toggleFields(autresFields, value === 'TD' || value === 'TP'|| value === 'Cours');
             };
 
             typeSelect.addEventListener('change', handleTypeChange);

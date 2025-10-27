@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('fichiers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('type', ['TD', 'TP', 'Concours']);
+            $table->enum('type', ['TD', 'TP','Cours','Concours']);
             $table->enum('niveau', ['BTS1', 'BTS2','BT','BTS','BTI']);
             $table->string('annee');
             $table->string('chemin');
