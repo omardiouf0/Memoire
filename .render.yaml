@@ -1,11 +1,10 @@
 services:
   - type: web
-    name: cfptdocs
-    env: php
+    name: mon-laravel
+    runtime: php
     buildCommand: |
-      composer install --no-dev --optimize-autoloader
+      composer install --optimize-autoloader --no-dev
+      php artisan storage:link
       php artisan config:cache
       php artisan route:cache
-    startCommand: php -S 0.0.0.0:10000 -t public
-    plan: free
-    autoDeploy: true
+    startCommand: php -S 0.0.0.0:$PORT -t public
